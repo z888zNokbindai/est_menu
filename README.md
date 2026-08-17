@@ -1,1 +1,1 @@
-url: <a hef='https://z888znokbindai.github.io/est_menu/'>welcome menuRhan</a>
+[Welcome Menu for QR Code](https://z888znokbindai.github.io/est_menu/)
