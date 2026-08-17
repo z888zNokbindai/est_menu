@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html class="light" lang="th">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Estella Khao Yai - Menu Selection</title>
+
+  <!-- Cache Control -->
+  <meta
+    http-equiv="Cache-Control"
+    content="no-cache, no-store, must-revalidate"
+  >
+
+  <meta
+    http-equiv="Pragma"
+    content="no-cache"
+  >
+
+  <meta
+    http-equiv="Expires"
+    content="0"
+  >
+
+
+  <!-- Fonts -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Libre+Caslon+Text:wght@400;700&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+
+          colors: {
+
+            /* Estella theme */
+
+            surface: "#f4fcee",
+
+            "surface-low":
+              "#eff6e8",
+
+            "surface-high":
+              "#e3eadd",
+
+            primary:
+              "#425217",
+
+            "primary-dark":
+              "#33410f",
+
+            secondary:
+              "#806b3b",
+
+            gold:
+              "#b99b60",
+
+            outline:
+              "#c4c8be",
+
+            "on-surface":
+              "#171d15"
+
+          },
+
+
+          fontFamily: {
+
+            thai: [
+              "Noto Sans Thai",
+              "sans-serif"
+            ],
+
+            serif: [
+              "Libre Caslon Text",
+              "serif"
+            ],
+
+            body: [
+              "Be Vietnam Pro",
+              "Noto Sans Thai",
+              "sans-serif"
+            ]
+
+          }
+
+        }
+      }
+    }
+  </script>
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html,
+    body {
+
+      margin: 0;
+
+      min-height: 100%;
+
+    }
+
+
+    body {
+
+      min-height: 100vh;
+      min-height: 100dvh;
+
+      background:
+        radial-gradient(
+          circle at 50% -10%,
+          rgba(185, 155, 96, 0.08),
+          transparent 36%
+        ),
+        #f4fcee;
+
+    }
+
+
+    /* subtle background */
+
+    body::before,
+    body::after {
+
+      content: "";
+
+      position: fixed;
+
+      width: 300px;
+      height: 500px;
+
+      pointer-events: none;
+
+      opacity: 0.025;
+
+      z-index: 0;
+
+      background:
+
+        radial-gradient(
+          ellipse at 30% 20%,
+          #425217 0 9%,
+          transparent 10%
+        ),
+
+        radial-gradient(
+          ellipse at 65% 35%,
+          #425217 0 9%,
+          transparent 10%
+        ),
+
+        radial-gradient(
+          ellipse at 32% 52%,
+          #425217 0 10%,
+          transparent 11%
+        ),
+
+        radial-gradient(
+          ellipse at 68% 70%,
+          #425217 0 10%,
+          transparent 11%
+        );
+
+    }
+
+
+    body::before {
+
+      left: -160px;
+
+      top: 10%;
+
+      transform:
+        rotate(-20deg);
+
+    }
+
+
+    body::after {
+
+      right: -160px;
+
+      bottom: 0;
+
+      transform:
+        rotate(160deg);
+
+    }
+
+
+    .page-content {
+
+      position: relative;
+
+      z-index: 1;
+
+    }
+
+
+    /*
+      Actual Estella logo
+    */
+
+    .logo-img {
+
+      display: block;
+
+      width: 100%;
+
+      max-width: 230px;
+
+      height: auto;
+
+      margin: auto;
+
+    }
+
+
+    /*
+      Menu card
+    */
+
+    .menu-card {
+
+      position: relative;
+
+      overflow: hidden;
+
+      transition:
+
+        transform 180ms ease,
+
+        background-color 180ms ease,
+
+        border-color 180ms ease,
+
+        box-shadow 180ms ease;
+
+    }
+
+
+    .menu-card::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+
+      left: 12%;
+
+      right: 12%;
+
+      height: 1px;
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          transparent,
+
+          rgba(185,155,96,.45),
+
+          transparent
+
+        );
+
+    }
+
+
+    .menu-card:hover {
+
+      background:
+        #eff6e8;
+
+      border-color:
+        rgba(66,82,23,.40);
+
+      transform:
+        translateY(-2px);
+
+      box-shadow:
+
+        0 12px 30px
+        rgba(66,82,23,.07);
+
+    }
+
+
+    .menu-card:active {
+
+      transform:
+        scale(.985);
+
+    }
+
+
+    .menu-card:focus-visible {
+
+      outline:
+
+        3px solid
+        rgba(185,155,96,.35);
+
+      outline-offset:
+        3px;
+
+    }
+
+
+    /*
+      Middle A La Carte
+    */
+
+    .menu-featured {
+
+      background:
+
+        rgba(66,82,23,.035);
+
+      border-color:
+
+        rgba(66,82,23,.30);
+
+    }
+
+
+    /*
+      Decorative separator
+    */
+
+    .separator-line {
+
+      height:
+        1px;
+
+      flex-grow:
+        1;
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          transparent,
+
+          rgba(128,107,59,.45)
+
+        );
+
+    }
+
+
+    .separator-line.right {
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          rgba(128,107,59,.45),
+
+          transparent
+
+        );
+
+    }
+
+
+    /*
+      Mobile
+    */
+
+    @media (max-width: 480px) {
+
+      .logo-img {
+
+        max-width:
+          190px;
+
+      }
+
+
+      .menu-card {
+
+        padding-top:
+          20px !important;
+
+        padding-bottom:
+          20px !important;
+
+      }
+
+    }
+
+
+    /*
+      very small phone
+    */
+
+    @media (max-width: 360px) {
+
+      .logo-img {
+
+        max-width:
+          165px;
+
+      }
+
+
+      .menu-card {
+
+        padding-top:
+          17px !important;
+
+        padding-bottom:
+          17px !important;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body
+  class="
+    text-on-surface
+    font-body
+    antialiased
+  "
+>
+
+
+  <main
+    class="
+      page-content
+      min-h-screen
+      min-h-[100dvh]
+      flex
+      flex-col
+      items-center
+      justify-center
+      px-5
+      py-8
+    "
+  >
+
+
+    <!-- =========================
+         Logo
+         ========================= -->
+
+    <div
+      class="
+        flex
+        flex-col
+        items-center
+        text-center
+        mb-8
+      "
+    >
+
+      <img
+        src="logo.png"
+        alt="Estella Khao Yai"
+        class="logo-img"
+      >
+
+    </div>
+
+
+
+    <!-- =========================
+         Separator
+         ========================= -->
+
+    <div
+      class="
+        flex
+        items-center
+        justify-center
+        w-full
+        max-w-[220px]
+        mb-8
+      "
+    >
+
+      <div
+        class="separator-line"
+      ></div>
+
+      <span
+        class="
+          mx-4
+          text-secondary
+          text-[9px]
+        "
+      >
+        ◆
+      </span>
+
+      <div
+        class="
+          separator-line
+          right
+        "
+      ></div>
+
+    </div>
+
+
+
+    <!-- =========================
+         Greeting
+         ========================= -->
+
+    <div
+      class="
+        text-center
+        mb-8
+      "
+    >
+
+      <h1
+        class="
+          font-thai
+          text-[20px]
+          md:text-[21px]
+          leading-8
+          font-medium
+          text-primary
+          mb-1
+        "
+      >
+
+        กรุณาเลือกเมนูที่ต้องการ
+
+      </h1>
+
+
+      <p
+        class="
+          font-body
+          text-[15px]
+          text-secondary
+        "
+      >
+
+        Please select your preferred menu
+
+      </p>
+
+    </div>
+
+
+
+    <!-- =========================
+         Menu Selection
+         ========================= -->
+
+    <div
+      class="
+        flex
+        flex-col
+        gap-4
+        w-full
+        max-w-md
+      "
+    >
+
+
+      <!-- Food Menu -->
+
+      <a
+        href="https://z888znokbindai.github.io/est_menu/food"
+        id="link-food"
+
+        class="
+          menu-card
+          w-full
+          flex
+          flex-col
+          items-center
+          justify-center
+
+          py-7
+          px-6
+
+          rounded-xl
+
+          border
+          border-secondary/30
+
+          bg-surface
+
+          text-center
+
+          no-underline
+        "
+      >
+
+        <span
+          class="
+            font-thai
+            text-[19px]
+            leading-7
+            font-medium
+            text-primary
+            mb-1
+          "
+        >
+
+          เมนูอาหาร อิงดาว
+
+        </span>
+
+
+        <span
+          class="
+            font-serif
+            text-[17px]
+            leading-6
+            text-secondary
+          "
+        >
+
+          Ing Dao Food Menu
+
+        </span>
+
+      </a>
+
+
+
+      <!-- A La Carte -->
+
+      <a
+        href="https://z888znokbindai.github.io/est_menu/ingdao"
+        id="link-ingdao"
+
+        class="
+          menu-card
+          menu-featured
+
+          w-full
+
+          flex
+          flex-col
+          items-center
+          justify-center
+
+          py-7
+          px-6
+
+          rounded-xl
+
+          border
+
+          text-center
+
+          no-underline
+        "
+      >
+
+        <span
+          class="
+            font-serif
+            text-[22px]
+            leading-7
+            text-primary
+            mb-1
+          "
+        >
+
+          Ing Dao
+
+        </span>
+
+
+        <span
+          class="
+            font-serif
+            text-[17px]
+            leading-6
+            text-secondary
+          "
+        >
+
+          A La Carte
+
+        </span>
+
+      </a>
+
+
+
+      <!-- Beverage Menu -->
+
+      <a
+        href="https://z888znokbindai.github.io/est_menu/drink"
+        id="link-drink"
+
+        class="
+          menu-card
+
+          w-full
+
+          flex
+          flex-col
+          items-center
+          justify-center
+
+          py-7
+          px-6
+
+          rounded-xl
+
+          border
+          border-secondary/30
+
+          bg-surface
+
+          text-center
+
+          no-underline
+        "
+      >
+
+        <span
+          class="
+            font-thai
+            text-[19px]
+            leading-7
+            font-medium
+            text-primary
+            mb-1
+          "
+        >
+
+          เมนูเครื่องดื่ม อิงดาว
+
+        </span>
+
+
+        <span
+          class="
+            font-serif
+            text-[17px]
+            leading-6
+            text-secondary
+          "
+        >
+
+          Ing Dao Beverage Menu
+
+        </span>
+
+      </a>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         Bottom Separator
+         ========================= -->
+
+    <div
+      class="
+        flex
+        items-center
+        justify-center
+
+        w-full
+        max-w-[220px]
+
+        mt-10
+        mb-6
+      "
+    >
+
+      <div
+        class="separator-line"
+      ></div>
+
+
+      <span
+        class="
+          mx-4
+          text-secondary
+          text-[9px]
+        "
+      >
+
+        ◆
+
+      </span>
+
+
+      <div
+        class="
+          separator-line
+          right
+        "
+      ></div>
+
+    </div>
+
+
+
+    <!-- =========================
+         Footer
+         ========================= -->
+
+    <p
+      class="
+        font-serif
+        text-[15px]
+        text-secondary
+        text-center
+      "
+    >
+
+      Scan once, choose your menu anytime
+
+    </p>
+
+
+  </main>
+
+
+
+  <script>
+
+    /*
+      =====================================================
+      Back / Forward Cache
+
+      คงระบบเดิมไว้
+      =====================================================
+    */
+
+    window.addEventListener(
+      'pageshow',
+
+      function (event) {
+
+        if (
+
+          event.persisted ||
+
+          (
+            typeof window.performance !==
+            'undefined' &&
+
+            window.performance.navigation.type === 2
+          )
+
+        ) {
+
+          window.location.reload(true);
+
+        }
+
+      }
+
+    );
+
+
+
+    /*
+      =====================================================
+      Cache Buster
+
+      คงระบบ Timestamp เดิม
+      =====================================================
+    */
+
+    try {
+
+      var timestamp =
+        new Date().getTime();
+
+
+      var foodLink =
+        document.getElementById(
+          'link-food'
+        );
+
+
+      var ingdaoLink =
+        document.getElementById(
+          'link-ingdao'
+        );
+
+
+      var drinkLink =
+        document.getElementById(
+          'link-drink'
+        );
+
+
+
+      if (foodLink) {
+
+        foodLink.href =
+
+          "https://z888znokbindai.github.io/est_menu/food?t=" +
+
+          timestamp;
+
+      }
+
+
+
+      if (ingdaoLink) {
+
+        ingdaoLink.href =
+
+          "https://z888znokbindai.github.io/est_menu/ingdao?t=" +
+
+          timestamp;
+
+      }
+
+
+
+      if (drinkLink) {
+
+        drinkLink.href =
+
+          "https://z888znokbindai.github.io/est_menu/drink?t=" +
+
+          timestamp;
+
+      }
+
+
+    }
+
+    catch (e) {
+
+      console.error(
+        "Cache buster error:",
+        e
+      );
+
+    }
+
+  </script>
+
+
+</body>
+
+</html>
