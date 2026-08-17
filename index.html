@@ -1,704 +1,983 @@
 <!DOCTYPE html>
-<html lang="th">
+<html class="light" lang="th">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Estella Khaoyai Menu</title>
+  <meta charset="UTF-8">
 
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Estella Khao Yai - Menu Selection</title>
+
+  <!-- Cache Control -->
+  <meta
+    http-equiv="Cache-Control"
+    content="no-cache, no-store, must-revalidate"
+  >
+
+  <meta
+    http-equiv="Pragma"
+    content="no-cache"
+  >
+
+  <meta
+    http-equiv="Expires"
+    content="0"
+  >
+
+
+  <!-- Fonts -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Libre+Caslon+Text:wght@400;700&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+
+          colors: {
+
+            /* Estella theme */
+
+            surface: "#f4fcee",
+
+            "surface-low":
+              "#eff6e8",
+
+            "surface-high":
+              "#e3eadd",
+
+            primary:
+              "#425217",
+
+            "primary-dark":
+              "#33410f",
+
+            secondary:
+              "#806b3b",
+
+            gold:
+              "#b99b60",
+
+            outline:
+              "#c4c8be",
+
+            "on-surface":
+              "#171d15"
+
+          },
+
+
+          fontFamily: {
+
+            thai: [
+              "Noto Sans Thai",
+              "sans-serif"
+            ],
+
+            serif: [
+              "Libre Caslon Text",
+              "serif"
+            ],
+
+            body: [
+              "Be Vietnam Pro",
+              "Noto Sans Thai",
+              "sans-serif"
+            ]
+
+          }
+
+        }
+      }
+    }
+  </script>
+
 
   <style>
-    :root {
-      --brand: #425217;
-      --brand-dark: #34410f;
-      --brand-soft: #697052;
-
-      --gold: #b99b60;
-      --gold-soft: #d7c69f;
-
-      --ivory: #f7f4ec;
-      --paper: #fffdf8;
-
-      --border: rgba(66, 82, 23, 0.25);
-      --text: #364018;
-      --muted: #7b806d;
-    }
 
     * {
       box-sizing: border-box;
     }
 
+
     html,
     body {
+
       margin: 0;
+
       min-height: 100%;
+
     }
 
-    body {
-      min-height: 100vh;
-      overflow-x: hidden;
 
-      font-family: "Noto Sans Thai", sans-serif;
-      color: var(--text);
+    body {
+
+      min-height: 100vh;
+      min-height: 100dvh;
 
       background:
         radial-gradient(
           circle at 50% -10%,
           rgba(185, 155, 96, 0.08),
-          transparent 38%
+          transparent 36%
         ),
-        var(--ivory);
+        #f4fcee;
 
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
     }
 
-    /* =========================
-       Botanical decoration
-       ========================= */
+
+    /* subtle background */
 
     body::before,
     body::after {
+
       content: "";
+
       position: fixed;
+
       width: 300px;
       height: 500px;
+
       pointer-events: none;
+
+      opacity: 0.025;
+
       z-index: 0;
-      opacity: 0.035;
+
+      background:
+
+        radial-gradient(
+          ellipse at 30% 20%,
+          #425217 0 9%,
+          transparent 10%
+        ),
+
+        radial-gradient(
+          ellipse at 65% 35%,
+          #425217 0 9%,
+          transparent 10%
+        ),
+
+        radial-gradient(
+          ellipse at 32% 52%,
+          #425217 0 10%,
+          transparent 11%
+        ),
+
+        radial-gradient(
+          ellipse at 68% 70%,
+          #425217 0 10%,
+          transparent 11%
+        );
+
     }
+
 
     body::before {
-      left: -150px;
-      top: 5%;
-      transform: rotate(-15deg);
 
-      background:
-        radial-gradient(
-          ellipse at 50% 10%,
-          var(--brand) 0 8%,
-          transparent 9%
-        ),
-        radial-gradient(
-          ellipse at 30% 25%,
-          var(--brand) 0 9%,
-          transparent 10%
-        ),
-        radial-gradient(
-          ellipse at 68% 36%,
-          var(--brand) 0 9%,
-          transparent 10%
-        ),
-        radial-gradient(
-          ellipse at 32% 52%,
-          var(--brand) 0 10%,
-          transparent 11%
-        ),
-        radial-gradient(
-          ellipse at 68% 68%,
-          var(--brand) 0 10%,
-          transparent 11%
-        );
+      left: -160px;
+
+      top: 10%;
+
+      transform:
+        rotate(-20deg);
+
     }
+
 
     body::after {
-      right: -150px;
+
+      right: -160px;
+
       bottom: 0;
-      transform: rotate(165deg);
-
-      background:
-        radial-gradient(
-          ellipse at 50% 10%,
-          var(--brand) 0 8%,
-          transparent 9%
-        ),
-        radial-gradient(
-          ellipse at 30% 25%,
-          var(--brand) 0 9%,
-          transparent 10%
-        ),
-        radial-gradient(
-          ellipse at 68% 36%,
-          var(--brand) 0 9%,
-          transparent 10%
-        ),
-        radial-gradient(
-          ellipse at 32% 52%,
-          var(--brand) 0 10%,
-          transparent 11%
-        ),
-        radial-gradient(
-          ellipse at 68% 68%,
-          var(--brand) 0 10%,
-          transparent 11%
-        );
-    }
-
-    /* =========================
-       Layout
-       ========================= */
-
-    .wrapper {
-      position: relative;
-      z-index: 1;
-
-      display: table;
-      width: 100%;
-      min-height: 100vh;
-      height: 100vh;
-    }
-
-    .cell {
-      display: table-cell;
-      vertical-align: middle;
-      text-align: center;
-
-      padding: 30px 20px;
-    }
-
-    .card {
-      position: relative;
-
-      width: 100%;
-      max-width: 520px;
-
-      margin: 0 auto;
-      padding: 44px 40px 28px;
-
-      background: var(--paper);
-
-      border: 1px solid var(--border);
-      border-radius: 28px;
-
-      box-shadow:
-        0 28px 70px rgba(43, 54, 18, 0.07),
-        0 4px 14px rgba(43, 54, 18, 0.03);
-    }
-
-    /* inner border */
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 7px;
-
-      border: 1px solid rgba(185, 155, 96, 0.13);
-      border-radius: 21px;
-
-      pointer-events: none;
-    }
-
-    /* =========================
-       Logo
-       ========================= */
-
-    .logo-img {
-      position: relative;
-      z-index: 1;
-
-      display: block;
-      width: 100%;
-      max-width: 220px;
-      height: auto;
-
-      margin: 0 auto 19px;
-    }
-
-    /* =========================
-       Divider
-       ========================= */
-
-    .divider {
-      position: relative;
-
-      width: 75%;
-      max-width: 290px;
-      height: 1px;
-
-      margin: 0 auto 29px;
-
-      border: 0;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent 0%,
-          var(--gold-soft) 18%,
-          var(--gold) 50%,
-          var(--gold-soft) 82%,
-          transparent 100%
-        );
-    }
-
-    .divider::after {
-      content: "";
-
-      position: absolute;
-      left: 50%;
-      top: 50%;
-
-      width: 7px;
-      height: 7px;
-
-      background: var(--gold);
 
       transform:
-        translate(-50%, -50%)
-        rotate(45deg);
+        rotate(160deg);
 
-      box-shadow:
-        0 0 0 6px var(--paper);
     }
 
-    /* =========================
-       Subtitle
-       ========================= */
 
-    .subtitle-th {
-      margin: 0;
+    .page-content {
 
-      color: var(--brand);
-
-      font-size: 1.04rem;
-      font-weight: 500;
-      line-height: 1.55;
-    }
-
-    .subtitle-en {
-      margin: 4px 0 31px;
-
-      color: var(--brand-soft);
-
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.05rem;
-      font-weight: 500;
-
-      letter-spacing: 0.25px;
-    }
-
-    /* =========================
-       Buttons
-       ========================= */
-
-    .menu-buttons {
-      display: block;
-    }
-
-    .btn {
       position: relative;
 
-      display: block;
-      width: 100%;
+      z-index: 1;
 
-      margin-bottom: 13px;
-      padding: 17px 20px;
-
-      background: var(--paper);
-
-      border: 1px solid rgba(66, 82, 23, 0.34);
-      border-radius: 15px;
-
-      color: var(--brand) !important;
-
-      text-align: center;
-      text-decoration: none;
-
-      transition:
-        background 0.18s ease,
-        color 0.18s ease,
-        border-color 0.18s ease,
-        box-shadow 0.18s ease,
-        transform 0.18s ease;
-
-      -webkit-tap-highlight-color: transparent;
     }
 
-    .btn:last-child {
-      margin-bottom: 0;
-    }
-
-    .btn:hover {
-      background: var(--brand);
-      border-color: var(--brand);
-
-      transform: translateY(-2px);
-
-      box-shadow:
-        0 10px 24px rgba(66, 82, 23, 0.14);
-    }
-
-    .btn:active {
-      transform: translateY(0);
-    }
-
-    .btn:focus-visible {
-      outline: 3px solid rgba(185, 155, 96, 0.35);
-      outline-offset: 3px;
-    }
-
-    .title-th {
-      display: block;
-
-      color: var(--brand);
-
-      font-size: 1.05rem;
-      font-weight: 500;
-      line-height: 1.35;
-
-      transition: color 0.18s ease;
-    }
-
-    .title-en {
-      display: block;
-
-      margin-top: 3px;
-
-      color: #9a7e49;
-
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.04rem;
-      font-weight: 600;
-
-      letter-spacing: 0.25px;
-
-      transition: color 0.18s ease;
-    }
-
-    .btn:hover .title-th {
-      color: #fffdf8;
-    }
-
-    .btn:hover .title-en {
-      color: #e2c994;
-    }
 
     /*
-      ปุ่มกลางให้เด่นกว่าปุ่มอื่นเล็กน้อย
-      แต่ยัง minimal
+      Actual Estella logo
     */
-    .btn-ingdao {
-      background: rgba(66, 82, 23, 0.045);
 
-      border-color: rgba(66, 82, 23, 0.48);
+    .logo-img {
+
+      display: block;
+
+      width: 100%;
+
+      max-width: 230px;
+
+      height: auto;
+
+      margin: auto;
+
     }
 
-    .btn-ingdao .title-th {
-      font-family: "Cormorant Garamond", serif;
 
-      font-size: 1.25rem;
-      font-weight: 600;
+    /*
+      Menu card
+    */
 
-      letter-spacing: 0.7px;
-    }
+    .menu-card {
 
-    .btn-ingdao:hover {
-      background: var(--brand);
-    }
-
-    /* =========================
-       Footer
-       ========================= */
-
-    .footer-note {
       position: relative;
 
-      margin-top: 28px;
-      padding-top: 20px;
+      overflow: hidden;
 
-      color: var(--muted);
+      transition:
 
-      font-family: "Cormorant Garamond", serif;
-      font-size: 0.94rem;
-      font-weight: 500;
+        transform 180ms ease,
 
-      letter-spacing: 0.3px;
+        background-color 180ms ease,
+
+        border-color 180ms ease,
+
+        box-shadow 180ms ease;
+
     }
 
-    .footer-note::before {
+
+    .menu-card::before {
+
       content: "";
 
       position: absolute;
-      top: 0;
-      left: 50%;
 
-      width: 100px;
+      top: 0;
+
+      left: 12%;
+
+      right: 12%;
+
       height: 1px;
 
-      transform: translateX(-50%);
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          transparent,
+
+          rgba(185,155,96,.45),
+
+          transparent
+
+        );
+
+    }
+
+
+    .menu-card:hover {
 
       background:
-        linear-gradient(
-          90deg,
-          transparent,
-          var(--gold),
-          transparent
-        );
-    }
+        #eff6e8;
 
-    .footer-note::after {
-      content: "";
-
-      position: absolute;
-      top: -3px;
-      left: 50%;
-
-      width: 7px;
-      height: 7px;
-
-      background: var(--gold);
+      border-color:
+        rgba(66,82,23,.40);
 
       transform:
-        translateX(-50%)
-        rotate(45deg);
+        translateY(-2px);
 
       box-shadow:
-        0 0 0 5px var(--paper);
+
+        0 12px 30px
+        rgba(66,82,23,.07);
+
     }
 
-    /* =========================
-       Mobile
-       ========================= */
+
+    .menu-card:active {
+
+      transform:
+        scale(.985);
+
+    }
+
+
+    .menu-card:focus-visible {
+
+      outline:
+
+        3px solid
+        rgba(185,155,96,.35);
+
+      outline-offset:
+        3px;
+
+    }
+
+
+    /*
+      Middle A La Carte
+    */
+
+    .menu-featured {
+
+      background:
+
+        rgba(66,82,23,.035);
+
+      border-color:
+
+        rgba(66,82,23,.30);
+
+    }
+
+
+    /*
+      Decorative separator
+    */
+
+    .separator-line {
+
+      height:
+        1px;
+
+      flex-grow:
+        1;
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          transparent,
+
+          rgba(128,107,59,.45)
+
+        );
+
+    }
+
+
+    .separator-line.right {
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          rgba(128,107,59,.45),
+
+          transparent
+
+        );
+
+    }
+
+
+    /*
+      Mobile
+    */
 
     @media (max-width: 480px) {
-      .cell {
-        padding: 14px;
-      }
-
-      .card {
-        padding: 32px 20px 22px;
-
-        border-radius: 23px;
-      }
-
-      .card::before {
-        inset: 5px;
-        border-radius: 18px;
-      }
 
       .logo-img {
-        max-width: 190px;
-        margin-bottom: 16px;
+
+        max-width:
+          190px;
+
       }
 
-      .divider {
-        width: 72%;
-        margin-bottom: 23px;
+
+      .menu-card {
+
+        padding-top:
+          20px !important;
+
+        padding-bottom:
+          20px !important;
+
       }
 
-      .subtitle-th {
-        font-size: 0.98rem;
-      }
-
-      .subtitle-en {
-        margin-bottom: 23px;
-        font-size: 0.98rem;
-      }
-
-      .btn {
-        padding: 15px 15px;
-        margin-bottom: 11px;
-
-        border-radius: 14px;
-      }
-
-      .title-th {
-        font-size: 0.98rem;
-      }
-
-      .title-en {
-        font-size: 0.97rem;
-      }
-
-      .btn-ingdao .title-th {
-        font-size: 1.16rem;
-      }
-
-      .footer-note {
-        margin-top: 23px;
-        padding-top: 18px;
-
-        font-size: 0.88rem;
-      }
     }
+
+
+    /*
+      very small phone
+    */
 
     @media (max-width: 360px) {
-      .cell {
-        padding: 9px;
-      }
-
-      .card {
-        padding: 26px 15px 19px;
-      }
 
       .logo-img {
-        max-width: 170px;
+
+        max-width:
+          165px;
+
       }
 
-      .subtitle-en {
-        margin-bottom: 19px;
+
+      .menu-card {
+
+        padding-top:
+          17px !important;
+
+        padding-bottom:
+          17px !important;
+
       }
 
-      .btn {
-        padding: 13px 12px;
-      }
     }
+
   </style>
+
 </head>
 
-<body>
 
-  <div class="wrapper">
-    <div class="cell">
-
-      <div class="card">
-
-        <img
-          src="logo.png"
-          alt="Estella Khaoyai Logo"
-          class="logo-img"
-        >
-
-        <div class="divider"></div>
-
-        <p class="subtitle-th">
-          กรุณาเลือกเมนูที่ต้องการ
-        </p>
-
-        <p class="subtitle-en">
-          Please select your preferred menu
-        </p>
+<body
+  class="
+    text-on-surface
+    font-body
+    antialiased
+  "
+>
 
 
-        <div class="menu-buttons">
-
-          <!-- Food Menu -->
-          <a
-            class="btn btn-food"
-            href="https://z888znokbindai.github.io/est_menu/food"
-            id="link-food"
-          >
-            <span class="title-th">
-              เมนูอาหาร อิงดาว
-            </span>
-
-            <span class="title-en">
-              Ing Dao Food Menu
-            </span>
-          </a>
+  <main
+    class="
+      page-content
+      min-h-screen
+      min-h-[100dvh]
+      flex
+      flex-col
+      items-center
+      justify-center
+      px-5
+      py-8
+    "
+  >
 
 
-          <!-- A La Carte -->
-          <a
-            class="btn btn-ingdao"
-            href="https://z888znokbindai.github.io/est_menu/alc"
-            id="link-ingdao"
-          >
-            <span class="title-th">
-              Ing Dao
-            </span>
+    <!-- =========================
+         Logo
+         ========================= -->
 
-            <span class="title-en">
-              A La Carte
-            </span>
-          </a>
+    <div
+      class="
+        flex
+        flex-col
+        items-center
+        text-center
+        mb-8
+      "
+    >
 
-
-          <!-- Beverage Menu -->
-          <a
-            class="btn btn-drink"
-            href="https://z888znokbindai.github.io/est_menu/drink"
-            id="link-drink"
-          >
-            <span class="title-th">
-              เมนูเครื่องดื่ม อิงดาว
-            </span>
-
-            <span class="title-en">
-              Ing Dao Beverage Menu
-            </span>
-          </a>
-
-        </div>
-
-
-        <div class="footer-note">
-          Scan once, choose your menu anytime
-        </div>
-
-      </div>
+      <img
+        src="logo.png"
+        alt="Estella Khao Yai"
+        class="logo-img"
+      >
 
     </div>
-  </div>
+
+
+
+    <!-- =========================
+         Separator
+         ========================= -->
+
+    <div
+      class="
+        flex
+        items-center
+        justify-center
+        w-full
+        max-w-[220px]
+        mb-8
+      "
+    >
+
+      <div
+        class="separator-line"
+      ></div>
+
+      <span
+        class="
+          mx-4
+          text-secondary
+          text-[9px]
+        "
+      >
+        ◆
+      </span>
+
+      <div
+        class="
+          separator-line
+          right
+        "
+      ></div>
+
+    </div>
+
+
+
+    <!-- =========================
+         Greeting
+         ========================= -->
+
+    <div
+      class="
+        text-center
+        mb-8
+      "
+    >
+
+      <h1
+        class="
+          font-thai
+          text-[20px]
+          md:text-[21px]
+          leading-8
+          font-medium
+          text-primary
+          mb-1
+        "
+      >
+
+        กรุณาเลือกเมนูที่ต้องการ
+
+      </h1>
+
+
+      <p
+        class="
+          font-body
+          text-[15px]
+          text-secondary
+        "
+      >
+
+        Please select your preferred menu
+
+      </p>
+
+    </div>
+
+
+
+    <!-- =========================
+         Menu Selection
+         ========================= -->
+
+    <div
+      class="
+        flex
+        flex-col
+        gap-4
+        w-full
+        max-w-md
+      "
+    >
+
+
+      <!-- Food Menu -->
+
+      <a
+        href="https://z888znokbindai.github.io/est_menu/food"
+        id="link-food"
+
+        class="
+          menu-card
+          w-full
+          flex
+          flex-col
+          items-center
+          justify-center
+
+          py-7
+          px-6
+
+          rounded-xl
+
+          border
+          border-secondary/30
+
+          bg-surface
+
+          text-center
+
+          no-underline
+        "
+      >
+
+        <span
+          class="
+            font-thai
+            text-[19px]
+            leading-7
+            font-medium
+            text-primary
+            mb-1
+          "
+        >
+
+          เมนูอาหาร อิงดาว
+
+        </span>
+
+
+        <span
+          class="
+            font-serif
+            text-[17px]
+            leading-6
+            text-secondary
+          "
+        >
+
+          Ing Dao Food Menu
+
+        </span>
+
+      </a>
+
+
+
+      <!-- A La Carte -->
+
+      <a
+        href="https://z888znokbindai.github.io/est_menu/alc"
+        id="link-ingdao"
+
+        class="
+          menu-card
+          menu-featured
+
+          w-full
+
+          flex
+          flex-col
+          items-center
+          justify-center
+
+          py-7
+          px-6
+
+          rounded-xl
+
+          border
+
+          text-center
+
+          no-underline
+        "
+      >
+
+        <span
+          class="
+            font-serif
+            text-[22px]
+            leading-7
+            text-primary
+            mb-1
+          "
+        >
+
+          Ing Dao
+
+        </span>
+
+
+        <span
+          class="
+            font-serif
+            text-[17px]
+            leading-6
+            text-secondary
+          "
+        >
+
+          A La Carte
+
+        </span>
+
+      </a>
+
+
+
+      <!-- Beverage Menu -->
+
+      <a
+        href="https://z888znokbindai.github.io/est_menu/drink"
+        id="link-drink"
+
+        class="
+          menu-card
+
+          w-full
+
+          flex
+          flex-col
+          items-center
+          justify-center
+
+          py-7
+          px-6
+
+          rounded-xl
+
+          border
+          border-secondary/30
+
+          bg-surface
+
+          text-center
+
+          no-underline
+        "
+      >
+
+        <span
+          class="
+            font-thai
+            text-[19px]
+            leading-7
+            font-medium
+            text-primary
+            mb-1
+          "
+        >
+
+          เมนูเครื่องดื่ม อิงดาว
+
+        </span>
+
+
+        <span
+          class="
+            font-serif
+            text-[17px]
+            leading-6
+            text-secondary
+          "
+        >
+
+          Ing Dao Beverage Menu
+
+        </span>
+
+      </a>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         Bottom Separator
+         ========================= -->
+
+    <div
+      class="
+        flex
+        items-center
+        justify-center
+
+        w-full
+        max-w-[220px]
+
+        mt-10
+        mb-6
+      "
+    >
+
+      <div
+        class="separator-line"
+      ></div>
+
+
+      <span
+        class="
+          mx-4
+          text-secondary
+          text-[9px]
+        "
+      >
+
+        ◆
+
+      </span>
+
+
+      <div
+        class="
+          separator-line
+          right
+        "
+      ></div>
+
+    </div>
+
+
+
+    <!-- =========================
+         Footer
+         ========================= -->
+
+    <p
+      class="
+        font-serif
+        text-[15px]
+        text-secondary
+        text-center
+      "
+    >
+
+      Scan once, choose your menu anytime
+
+    </p>
+
+
+  </main>
+
 
 
   <script>
-    /*
-      Reload เมื่อกลับมาจาก Back / Forward
-    */
-    window.addEventListener('pageshow', function (event) {
 
-      if (
-        event.persisted ||
-        (
-          typeof window.performance !== 'undefined' &&
-          window.performance.navigation.type === 2
-        )
-      ) {
-        window.location.reload(true);
+    /*
+      =====================================================
+      Back / Forward Cache
+
+      คงระบบเดิมไว้
+      =====================================================
+    */
+
+    window.addEventListener(
+      'pageshow',
+
+      function (event) {
+
+        if (
+
+          event.persisted ||
+
+          (
+            typeof window.performance !==
+            'undefined' &&
+
+            window.performance.navigation.type === 2
+          )
+
+        ) {
+
+          window.location.reload(true);
+
+        }
+
       }
 
-    });
+    );
+
 
 
     /*
+      =====================================================
       Cache Buster
+
+      คงระบบ Timestamp เดิม
+      =====================================================
     */
+
     try {
 
-      var timestamp = new Date().getTime();
+      var timestamp =
+        new Date().getTime();
+
 
       var foodLink =
-        document.getElementById('link-food');
+        document.getElementById(
+          'link-food'
+        );
+
 
       var ingdaoLink =
-        document.getElementById('link-ingdao');
+        document.getElementById(
+          'link-ingdao'
+        );
+
 
       var drinkLink =
-        document.getElementById('link-drink');
+        document.getElementById(
+          'link-drink'
+        );
+
 
 
       if (foodLink) {
 
         foodLink.href =
+
           "https://z888znokbindai.github.io/est_menu/food?t=" +
+
           timestamp;
 
       }
+
 
 
       if (ingdaoLink) {
 
         ingdaoLink.href =
+
           "https://z888znokbindai.github.io/est_menu/alc?t=" +
+
           timestamp;
 
       }
+
 
 
       if (drinkLink) {
 
         drinkLink.href =
+
           "https://z888znokbindai.github.io/est_menu/drink?t=" +
+
           timestamp;
 
       }
 
-    } catch (e) {
+
+    }
+
+    catch (e) {
 
       console.error(
         "Cache buster error:",
@@ -706,7 +985,10 @@
       );
 
     }
+
   </script>
 
+
 </body>
+
 </html>
