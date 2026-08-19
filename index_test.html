@@ -732,6 +732,72 @@
 
 
 
+
+
+      <!-- Combo Set -->
+
+      <a
+        href="https://z888znokbindai.github.io/est_menu/combo"
+        id="link-combo"
+
+        class="
+          menu-card
+
+          w-full
+
+          flex
+          flex-col
+          items-center
+          justify-center
+
+          py-7
+          px-6
+
+          rounded-xl
+
+          border
+          border-secondary/30
+
+          bg-surface
+
+          text-center
+
+          no-underline
+        "
+      >
+
+        <span
+          class="
+            font-thai
+            text-[19px]
+            leading-7
+            font-medium
+            text-primary
+            mb-1
+          "
+        >
+
+          ชุดคอมโบ
+
+        </span>
+
+
+        <span
+          class="
+            font-serif
+            text-[17px]
+            leading-6
+            text-secondary
+          "
+        >
+
+          Combo Set
+
+        </span>
+
+      </a>
+
+
       <!-- Beverage Menu -->
 
       <a
@@ -939,6 +1005,12 @@
         );
 
 
+      var comboLink =
+        document.getElementById(
+          'link-combo'
+        );
+
+
 
       if (foodLink) {
 
@@ -969,6 +1041,17 @@
         drinkLink.href =
 
           "https://z888znokbindai.github.io/est_menu/drink?t=" +
+
+          timestamp;
+
+      }
+
+
+      if (comboLink) {
+
+        comboLink.href =
+
+          "https://z888znokbindai.github.io/est_menu/combo?t=" +
 
           timestamp;
 
