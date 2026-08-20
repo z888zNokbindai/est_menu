@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>กำลังเปิดเมนู</title>
+
+  <!-- กันแคช -->
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <script>
+    // แก้ลิงก์เมนูตรงนี้ที่เดียว
+    const MENU_URL = "https://drive.google.com/file/d/1GsamZHQDA_ySdEZYxvCnHvu7z7YDrUN7/view?usp=sharing";
+
+    const freshUrl = MENU_URL + "&t=" + Date.now();
+
+    window.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("manualLink").href = freshUrl;
+      window.location.replace(freshUrl);
+    });
+  </script>
+</head>
+
+<body>
+  <p>กำลังเปิดเมนูล่าสุด...</p>
+
+  <p>
+    หากไม่ไปอัตโนมัติ
+    <a id="manualLink" href="#">กดที่นี่</a>
+  </p>
+</body>
+</html>
