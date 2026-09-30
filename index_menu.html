@@ -323,6 +323,23 @@
     }
 
 
+    .menu-options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .menu-options-grid > .menu-card {
+      min-height: 124px;
+    }
+
+    @media (min-width: 400px) {
+      .menu-options-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     .menu-sawadika {
       border: 2px solid rgba(185,155,96,.9);
       background: linear-gradient(120deg, #eff6e8 0%, #e5ecd5 52%, #f7f2df 100%);
@@ -617,7 +634,7 @@
         flex-col
         gap-4
         w-full
-        max-w-md
+        max-w-2xl
       "
     >
 
@@ -675,6 +692,8 @@
         </span>
 
       </a>
+
+      <div class="menu-options-grid">
 
 
       <!-- Food Menu -->
@@ -953,6 +972,9 @@
         </span>
 
       </a>
+
+      </div>
+
 
 
     </div>
