@@ -148,82 +148,47 @@
     }
 
 
-    /* subtle background */
+    /*
+      Estella pattern
+    */
 
-    body::before,
-    body::after {
+    body::before {
 
       content: "";
 
       position: fixed;
 
-      width: 300px;
-      height: 500px;
+      inset: 0;
 
       pointer-events: none;
 
-      opacity: 0.025;
-
       z-index: 0;
 
-      background:
+      opacity: 0.045;
 
-        radial-gradient(
-          ellipse at 30% 20%,
-          #425217 0 9%,
-          transparent 10%
-        ),
+      background-image:
+        url("estella-pattern.webp");
 
-        radial-gradient(
-          ellipse at 65% 35%,
-          #425217 0 9%,
-          transparent 10%
-        ),
+      background-repeat:
+        repeat;
 
-        radial-gradient(
-          ellipse at 32% 52%,
-          #425217 0 10%,
-          transparent 11%
-        ),
+      background-size:
+        700px auto;
 
-        radial-gradient(
-          ellipse at 68% 70%,
-          #425217 0 10%,
-          transparent 11%
-        );
+      background-position:
+        center top;
 
     }
 
 
-    body::before {
+    @media (max-width: 480px) {
 
-      left: -160px;
+      body::before {
 
-      top: 10%;
+        background-size:
+          520px auto;
 
-      transform:
-        rotate(-20deg);
-
-    }
-
-
-    body::after {
-
-      right: -160px;
-
-      bottom: 0;
-
-      transform:
-        rotate(160deg);
-
-    }
-
-
-    .page-content {
-
-      position: relative;
-
-      z-index: 1;
+      }
 
     }
 
