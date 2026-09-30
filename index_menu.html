@@ -346,37 +346,22 @@
         0 10px 28px
         rgba(185,155,96,.15);
 
-      animation:
-
-        happy-hour-glow
-        2.8s ease-in-out
-        infinite alternate;
+      animation: happy-hour-attention 2.6s ease-in-out infinite;
 
     }
 
 
-    @keyframes happy-hour-glow {
-
-      from {
-
-        box-shadow:
-
-          0 8px 20px
-          rgba(185,155,96,.12);
-
+    @keyframes happy-hour-attention {
+      0%, 100% {
+        transform: translateY(0);
+        box-shadow: 0 8px 20px rgba(185,155,96,.12);
       }
 
-      to {
-
-        box-shadow:
-
-          0 14px 34px
-          rgba(185,155,96,.30);
-
+      50% {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 36px rgba(185,155,96,.30);
       }
-
     }
-
 
     @media (prefers-reduced-motion: reduce) {
 
