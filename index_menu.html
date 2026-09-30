@@ -359,6 +359,73 @@
 
 
     /*
+      SaWaDiKa Happy Hour preview
+    */
+
+    .menu-coming-soon {
+
+      border-color:
+
+        rgba(185,155,96,.72);
+
+      background:
+
+        linear-gradient(
+          135deg,
+          rgba(185,155,96,.15),
+          rgba(244,252,238,.96) 58%
+        );
+
+      box-shadow:
+
+        0 10px 28px
+        rgba(185,155,96,.15);
+
+      animation:
+
+        happy-hour-glow
+        2.8s ease-in-out
+        infinite alternate;
+
+    }
+
+
+    @keyframes happy-hour-glow {
+
+      from {
+
+        box-shadow:
+
+          0 8px 20px
+          rgba(185,155,96,.12);
+
+      }
+
+      to {
+
+        box-shadow:
+
+          0 14px 34px
+          rgba(185,155,96,.30);
+
+      }
+
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .menu-coming-soon {
+
+        animation:
+          none;
+
+      }
+
+    }
+
+
+    /*
       Decorative separator
     */
 
@@ -605,6 +672,70 @@
         max-w-md
       "
     >
+
+
+      <!-- SaWaDiKa Happy Hour (Coming Soon) -->
+
+      <div
+        aria-disabled="true"
+        class="
+          menu-card
+          menu-coming-soon
+
+          w-full
+
+          flex
+          flex-col
+          items-center
+          justify-center
+
+          py-7
+          px-6
+
+          rounded-xl
+
+          border
+          border-secondary/30
+
+          bg-surface
+
+          text-center
+
+          pointer-events-none
+          select-none
+        "
+      >
+
+        <span
+          class="
+            font-serif
+            text-[22px]
+            leading-7
+            text-primary
+            mb-1
+          "
+        >
+
+          SaWaDiKa Happy Hour
+
+        </span>
+
+
+        <span
+          class="
+            font-body
+            text-[13px]
+            uppercase
+            tracking-[0.16em]
+            text-secondary
+          "
+        >
+
+          Coming Soon • 1 October
+
+        </span>
+
+      </div>
 
 
       <!-- Food Menu -->
@@ -883,70 +1014,6 @@
         </span>
 
       </a>
-
-
-      <!-- SaWaDiKa Happy Hour (Coming Soon) -->
-
-      <div
-        aria-disabled="true"
-        class="
-          menu-card
-
-          w-full
-
-          flex
-          flex-col
-          items-center
-          justify-center
-
-          py-7
-          px-6
-
-          rounded-xl
-
-          border
-          border-secondary/30
-
-          bg-surface
-
-          text-center
-
-          pointer-events-none
-          opacity-65
-          select-none
-        "
-      >
-
-        <span
-          class="
-            font-serif
-            text-[22px]
-            leading-7
-            text-primary
-            mb-1
-          "
-        >
-
-          SaWaDiKa Happy Hour
-
-        </span>
-
-
-        <span
-          class="
-            font-body
-            text-[13px]
-            uppercase
-            tracking-[0.16em]
-            text-secondary
-          "
-        >
-
-          Coming Soon
-
-        </span>
-
-      </div>
 
 
     </div>
